@@ -38,6 +38,5 @@ def GetForumQuestionOld(filename):
 
     return id_list, forum_type
 
-#GetForumQuestionOld('/Users/yanyunliu/PycharmProjects/CourseraCrawl/forum_id_new.json')
 
 

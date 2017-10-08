@@ -11,7 +11,7 @@ from GetForumID import *
 if __name__ == '__main__':
 
     cf = ConfigParser.ConfigParser()
-    cf.read("/Users/yanyunliu/PycharmProjects/CourseraCrawl/configurationv2.cfg")
+    cf.read("configuration.cfg")
 
     signin_url = cf.get('coursera','url')
     your_email_account = cf.get('Login','username')
@@ -28,26 +28,11 @@ if __name__ == '__main__':
 
 
 
-
-    # url = 'https://www.coursera.org/api/onDemandCourseForums.v1?q=course&courseId=Gtv4Xb1-EeS-ViIACwYKVQ&limit=500&fields=title,description,parentForumId,order,legacyForumId,forumType,groupForums.v1(title,description,parentForumId,order,forumType)'
-    #
-    # url = 'https://www.coursera.org/api/onDemandCourseForums.v1?q=course&courseId=Gtv4Xb1-EeS-ViIACwYKVQ&limit=500&fields=title,description,parentForumId,order,legacyForumId,forumType,groupForums.v1(title,description,parentForumId,order,forumType)'
-    # #print "response"
-    #
-    # test = coursera_session.get(url, auth=HTTPBasicAuth('dorisliu9318@gmail.com', 'Wawzxklyy9318')).json()
-    # test = JsonEncoder(test)
-    # print test
-    # print json.dumps(test, ensure_ascii=False)
-
-
-    #print len(test['elements'])
-
-
     f = open('QuestionIDjsonForOld.json','w+')
     f_log = open('QuestionLog.txt','w+')
 
     question_list = []
-    filename = '/Users/yanyunliu/PycharmProjects/CourseraCrawl/forum_id_oldsession.json'
+    filename = 'forum_id.json'
     forum_id, forum_type = GetForumIDlist('from_file',filename)
 
     print forum_type

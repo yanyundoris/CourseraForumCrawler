@@ -43,7 +43,6 @@ def LoginToCoursera(accountInfo, your_agent, signin_url):
         print "Fail!"
         print login_res.text
 
-#def GetAllForumID(url,coursera_session):
 
 def CheckNoneElement(response):
     if "elements" in response.keys() and response['elements'] != [] and int(len(res['elements']))==1:
@@ -66,7 +65,7 @@ def JsonEncoder(encode_object,encoding ='utf-8'):
 if __name__ == '__main__':
 
     cf = ConfigParser.ConfigParser()
-    cf.read("/Users/yanyunliu/PycharmProjects/CourseraCrawl/configuration.cfg")
+    cf.read("configuration.cfg")
 
     signin_url = cf.get('coursera','url')
     your_email_account = cf.get('Login','username')
@@ -86,7 +85,7 @@ if __name__ == '__main__':
     f_logfile = open('logfileForOld.log',"w+")
 
     user_course_questionId = GetUserCourseQuestionId()
-    id_list, forum_type = GetForumQuestionOld('/Users/yanyunliu/PycharmProjects/CourseraCrawl/forum_id_new.json')
+    id_list, forum_type = GetForumQuestionOld('forum_id.json')
 
     question_list = []
 

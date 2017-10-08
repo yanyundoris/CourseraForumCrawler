@@ -114,7 +114,7 @@ def GetForumIDlist(source,filename='',login_session='',url ='',save_file = ''):
 if __name__ == '__main__':
 
     cf = ConfigParser.ConfigParser()
-    cf.read("/Users/yanyunliu/PycharmProjects/CourseraCrawl/configuration.cfg")
+    cf.read("configuration.cfg")
 
     signin_url = cf.get('coursera','url')
     your_email_account = cf.get('Login','username')
@@ -132,7 +132,7 @@ if __name__ == '__main__':
     myurl = 'https://www.coursera.org/api/onDemandCourseForums.v1?q=course&courseId=Gtv4Xb1-EeS-ViIACwYKVQ&limit=500&fields=title,description,parentForumId,order,legacyForumId,forumType,groupForums.v1(title,description,parentForumId,order,forumType)'
 
 
-    filename = '/Users/yanyunliu/PycharmProjects/CourseraCrawl/forum_id_new.json'
+    filename = 'forum_id.json'
     id_list, forum_type = GetForumIDlist('from_file', filename, login_session=coursera_session, url=myurl, save_file='')
 
     print id_list

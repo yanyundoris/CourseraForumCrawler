@@ -26,6 +26,12 @@ import time
 
   1. Prepare your browser, and;
   2. Adding webdriver to your local path.
+
+
+### Specify the course url in `test.py`
+
+
+  `courseID, userID = ForumCrawl.GetCourseID( enter_your_course_url_here , ForumCrawlSession)`
   
 ### Don't forget to fill in configuration.cfg file
 
